@@ -39,12 +39,21 @@ mg_boost_emulator/
 
 Pretrained models are **not included** in this repository due to size.
 
-Download them from:
+---
 
-👉 **[INSERT LINK HERE]**
+```markdown
+## Model Files
 
-and place them in models/
+Pretrained models are available at:
 
+[Zenodo Dataset](https://zenodo.org/records/19625918)
+
+After downloading, place all files in:
+
+```bash
+models/
+
+⚠️ The emulator will not run without these files.
 ---
 
 Required files:
@@ -71,6 +80,8 @@ Install dependencies:
 ```python
 pip install -r requirements.txt
 ```
+---
+
 ### Running the Demo
 
 From the repo root:
