@@ -41,18 +41,18 @@ Pretrained models are **not included** in this repository due to size.
 
 ---
 
-```markdown
+
 
 Pretrained models are available at:
-
+```
 [Zenodo Dataset](https://zenodo.org/records/19625918)
 ```
 After downloading, place all files in:
 
 ```bash
 models/
-
-⚠️ The emulator will not run without these files.
+```
+The emulator will not run without these files.
 ---
 
 Required files:
