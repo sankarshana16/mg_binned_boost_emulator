@@ -47,7 +47,7 @@ Pretrained models are **not included** in this repository due to size.
 Pretrained models are available at:
 
 [Zenodo Dataset](https://zenodo.org/records/19625918)
-
+```
 After downloading, place all files in:
 
 ```bash
