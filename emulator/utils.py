@@ -1,4 +1,5 @@
 import warnings
+import numpy
 
 
 PARAM_BOUNDS = {
@@ -6,10 +7,10 @@ PARAM_BOUNDS = {
     "Omega_b": (0.04, 0.055),
     "h": (0.65, 0.73),
     "n_s": (0.95, 1.0),
-    "A_s": (2.9960, 3.091),  # ln(1e10 As)
+    "A_s": (np.exp(2.9960)/1e10, np.exp(3.091)/1e10),  # ln(1e10 As)
     "mu": (0.9, 1.1),
     "eta": (0.9, 1.1),
-    "z": (0.01, 3.0),
+    "z": (0.0, 3.0),
     "bin_index": (0, 4),
 }
 
