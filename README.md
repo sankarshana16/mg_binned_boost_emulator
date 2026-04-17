@@ -36,7 +36,7 @@ for m in mus:
         cosmo,
         mu=m,
         eta=1.0,
-        bin_index=4,
+        bin_index=1,
         zs=[0., 0.5, 1.0]
     )
     plt.semilogx(k, boost[0], label=f"mu = {m}, z=0")
