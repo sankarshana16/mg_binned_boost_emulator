@@ -79,6 +79,6 @@ python -m examples.demo
 ```
 This will:
 
-Load the NN + GP emulators
-Compute the MG boost
-Plot the result
+- Load the NN + GP emulators  
+- Compute the MG boost  
+- Plot the result  
