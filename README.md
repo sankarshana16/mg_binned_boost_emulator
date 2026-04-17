@@ -52,6 +52,23 @@ plt.show()
 ```
 
 ![MG Boost Emulator](figures/boost_plot.png)
+
+---
+
+## Training Parameter Ranges
+
+| Parameter | Min | Max |
+|----------|-----|-----|
+| Ωm       | 0.25 | 0.35 |
+| Ωb       | 0.04 | 0.055 |
+| h        | 0.65 | 0.73 |
+| ns       | 0.95 | 1.0 |
+| ln(10¹⁰ As) | 2.996 | 3.091 |
+| μ        | 0.9 | 1.1 |
+| η        | 0.9 | 1.1 |
+| z        | 0.01 | 3.0 |
+| bin_index | 0 | 4 |
+
 ---
 
 ## Repository Structure

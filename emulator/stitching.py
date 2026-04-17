@@ -1,5 +1,7 @@
 import numpy as np
 from scipy.interpolate import interp1d
+from .utils import check_param_ranges
+
 
 
 class BoostEmulator:
@@ -41,6 +43,8 @@ class BoostEmulator:
     def predict_boost(self, cosmo, mu, eta, bin_index, zs):
 
         zs = np.atleast_1d(zs)
+        
+        check_param_ranges(cosmo, mu, eta, bin_index, zs)
 
         # -----------------------------
         # Linear boost (NN)
