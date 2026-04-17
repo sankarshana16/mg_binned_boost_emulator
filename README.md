@@ -57,6 +57,8 @@ plt.show()
 
 ## Training Parameter Ranges
 
+Despite the fact that the emulator is sub-percent accurate to high-k, we emphasize that the accuracy of the emulator beyond k= 1 h/Mpc is significantly affected by the limitations of the COLA simulations that Gaussian Process emulator is trained on. So we do not recommend employing the emulator in analyses incolving cosmological inference on scales smaller than 1h/Mpc. Below are the flat prior ranges for the parameters used to train the linear and the non-linear emulators. Currently, the code gives you a warning if you pass a value that is outside this prior range. We do not guarantee the accuracy/precision in P(k) outside of these prior ranges. 
+
 | Parameter | Min | Max |
 |----------|-----|-----|
 | Ωm       | 0.25 | 0.35 |
