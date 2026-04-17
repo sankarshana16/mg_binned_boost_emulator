@@ -92,3 +92,5 @@ This will:
 - Load the NN + GP emulators  
 - Compute the MG boost  
 - Plot the result  
+
+Alternatively, run the example Jupyter notebook, which does the same and allows you to play around with the emulator inputs. 
