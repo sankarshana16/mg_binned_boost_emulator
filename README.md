@@ -3,7 +3,7 @@
 A fast emulator for the modified gravity boost to the matter power spectrum,
 covering linear to nonlinear scales via a hybrid NN + GP approach.
 
-This emulator involves:
+This emulator involves:	
 - A neural network (NN) for linear scales
 - A Gaussian Process (GP) emulator for nonlinear scales
 - A smooth stitching procedure across k
@@ -19,6 +19,13 @@ It supports redshift-dependent modified gravity models with binning.
 - Handles MG parameters (μ, η) and bin-dependent activation
 - Fully replaces expensive Boltzmann / simulation calls in inference pipelines
 
+---
+
+## Example Output
+
+Modified gravity boost as a function of scale for different values of $\mu$ and redshift for one of the MG bins.
+
+![MG Boost Emulator](figures/boost_plot.png)
 ---
 
 ## Repository Structure
