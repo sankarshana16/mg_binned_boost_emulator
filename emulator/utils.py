@@ -1,5 +1,5 @@
 import warnings
-import numpy
+import numpy as np
 
 
 PARAM_BOUNDS = {
