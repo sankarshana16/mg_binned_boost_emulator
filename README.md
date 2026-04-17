@@ -23,7 +23,33 @@ It supports redshift-dependent modified gravity models with binning.
 
 ## Example Output
 
+
 Modified gravity boost as a function of scale for different values of $\mu$ and redshift for one of the MG bins.
+
+```python
+mus = [0.9, 1.0, 1.1]
+
+plt.figure(figsize=(6,4))
+
+for m in mus:
+    k, boost = emu.predict_boost(
+        cosmo,
+        mu=m,
+        eta=1.0,
+        bin_index=4,
+        zs=[0., 0.5, 1.0]
+    )
+    plt.semilogx(k, boost[0], label=f"mu = {m}, z=0")
+
+plt.axhline(1.0, linestyle="--", color="black")
+
+plt.xlabel("k")
+plt.ylabel("Boost")
+plt.legend()
+plt.title("Effect of μ")
+plt.show()
+
+```
 
 ![MG Boost Emulator](figures/boost_plot.png)
 ---
