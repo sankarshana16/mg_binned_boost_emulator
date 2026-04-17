@@ -63,18 +63,20 @@ cola_eg.txt
 
 Clone the repo:
 
+```python
 git clone https://github.com/yourusername/mg_boost_emulator.git
 cd mg_boost_emulator
-
+```
 Install dependencies:
-
+```python
 pip install -r requirements.txt
+```
 ### Running the Demo
 
 From the repo root:
-
+```python
 python -m examples.demo
-
+```
 This will:
 
 Load the NN + GP emulators
