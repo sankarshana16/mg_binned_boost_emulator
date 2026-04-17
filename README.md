@@ -1,13 +1,14 @@
 # MG Boost Emulator
 
-A fast emulator for modified gravity (MG) boosts to the matter power spectrum.
+A fast emulator for the modified gravity boost to the matter power spectrum,
+covering linear to nonlinear scales via a hybrid NN + GP approach.
 
-This emulator combines:
+This emulator involves:
 - A neural network (NN) for linear scales
 - A Gaussian Process (GP) emulator for nonlinear scales
 - A smooth stitching procedure across k
 
-It supports redshift-dependent modified gravity models with binning.
+It supports redshift-dependent modified gravity models with binning. 
 
 ---
 
