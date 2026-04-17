@@ -45,9 +45,10 @@ Download them from:
 
 and place them in models/
 
+---
 
 Required files:
-
+```
 linear_boost_nn.pt
 gp_full_corrected.cpk
 gp_bin5.cpk
@@ -55,7 +56,8 @@ pca_full_corrected.cpk
 pca_bin5.cpk
 standardizer_bin5.cpk
 cola_eg.txt
-
+```
+---
 
 ## Installation
 
