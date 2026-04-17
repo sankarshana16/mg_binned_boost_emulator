@@ -21,7 +21,7 @@ It supports redshift-dependent modified gravity models with binning.
 ---
 
 ## Repository Structure
-
+```
 mg_boost_emulator/
 │
 ├── emulator/ # Core emulator code
@@ -32,7 +32,7 @@ mg_boost_emulator/
 ├── README.md
 ├── requirements.txt
 
-
+```
 ---
 
 ## Model Files
