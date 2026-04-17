@@ -9,7 +9,7 @@ from emulator.stitching import BoostEmulator
 # -------------------------------------------------
 # Paths (EDIT THESE if needed)
 # -------------------------------------------------
-MODEL_DIR = "/home/sankarshana/Codes/emulation_project_lmu/"
+MODEL_DIR = "models/"
 
 linear_model_path = MODEL_DIR + "linear_boost_nn.pt"
 
