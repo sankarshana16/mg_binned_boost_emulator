@@ -42,7 +42,6 @@ Pretrained models are **not included** in this repository due to size.
 ---
 
 ```markdown
-## Model Files
 
 Pretrained models are available at:
 
