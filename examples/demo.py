@@ -1,43 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from emulator.linear_nn import LinearBoostNN
-from emulator.gp_emulator import NonlinearBoostGP
-from emulator.stitching import BoostEmulator
+from emulator import MGEmulator
 
-
-# -------------------------------------------------
-# Paths (EDIT THESE if needed)
-# -------------------------------------------------
-MODEL_DIR = "models/"
-
-linear_model_path = MODEL_DIR + "linear_boost_nn.pt"
-
-gp_full_path = MODEL_DIR + "gp_full_corrected.cpk"
-pca_full_path = MODEL_DIR + "pca_full_corrected.cpk"
-
-gp_bin5_path = MODEL_DIR + "gp_bin5.cpk"
-pca_bin5_path = MODEL_DIR + "pca_bin5.cpk"
-standardizer_bin5_path = MODEL_DIR + "standardizer_bin5.cpk"
-
-k_path = MODEL_DIR + "cola_eg.txt"   # or wherever your k-grid is stored
 
 
 # -------------------------------------------------
-# Load emulators
+# Load emulator
 # -------------------------------------------------
-linear_emu = LinearBoostNN(linear_model_path)
 
-gp_emu = NonlinearBoostGP(
-    gp_full_path,
-    pca_full_path,
-    gp_bin5_path,
-    pca_bin5_path,
-    standardizer_bin5_path,
-    k_path
-)
-
-emu = BoostEmulator(linear_emu, gp_emu)
+emu = MGEmulator(model_dir="./models")
 
 
 # -------------------------------------------------
@@ -86,4 +58,53 @@ plt.title("MG Boost Emulator")
 
 plt.legend()
 plt.tight_layout()
+plt.show()
+
+mus = [0.9, 1.1]  # The extreme values
+
+colors = {
+    0.9: "blue",
+    1.1: "red"
+}
+
+linestyles = {
+    0.0: "-",
+    0.5: "--",
+    1.0: ":"
+}
+
+zs = [0.0, 0.5, 1.0]
+
+plt.figure(figsize=(6,4))
+
+for m in mus:
+
+    k, boost = emu.predict_boost(
+        cosmo,
+        mu=m,
+        eta=1.0,
+        bin_index=1,
+        zs=zs
+    )
+
+    for i, z in enumerate(zs):
+        plt.semilogx(
+            k,
+            boost[i],
+            color=colors[m],
+            linestyle=linestyles[z],
+            label=rf"$\mu={m},\, z={z}$"
+        )
+
+plt.axhline(1.0, linestyle="--", color="black", alpha=0.6)
+
+plt.xlabel(r"$k\ [h\,\mathrm{Mpc}^{-1}]$", fontsize=14)
+plt.ylabel("Boost", fontsize=14)
+plt.title(r"Effect of $\mu$ modified at $0.43 \leq z \leq 0.91$", fontsize=16)
+
+plt.ylim(0.9, 1.1)
+
+plt.legend(ncol=2, fontsize=10)
+plt.tight_layout()
+plt.savefig("./figures/boost_plot.png")
 plt.show()
