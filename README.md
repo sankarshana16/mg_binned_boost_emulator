@@ -27,6 +27,10 @@ It supports redshift-dependent modified gravity models with binning.
 Modified gravity boost as a function of scale for different values of $\mu$ and redshift for one of the MG bins.
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
+from emulator import MGEmulator
+
 mus = [0.9, 1.0, 1.1]
 
 plt.figure(figsize=(6,4))
