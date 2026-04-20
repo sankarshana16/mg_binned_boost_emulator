@@ -156,7 +156,10 @@ Alternatively, run the example Jupyter notebook, which does the same and allows 
 
 ### Main paper that shows how this emulator was developed and some results using it.
 
-- [MG Boost Emulator Paper (arXiv:2603.11895)](https://arxiv.org/pdf/2603.11895)
+- [MG Boost Emulator Paper (arXiv:2603.11895)](https://arxiv.org/pdf/2603.11895) 
+  Sankarshana Srinivasan, Shreya Prabhu, Kai Lehman, Ajiv Krishnan Vinaychandran, and Jochen Weller (2026)
+  *Cosmological gravity on all scales V: MCMC forecasts combining large scale structure and CMB lensing for binned phenomenological modified gravity*
+  Uses emulator to compute matter power spectrum and therefore build the 3x2pt data vector for LSST Y10, and also construct the combination of CMB lensing with the 3x2pt data vector. The emulator allows one to test for deviations across a variety of bins (one at a time) between z=0 and z=3.
 
 ---
 
