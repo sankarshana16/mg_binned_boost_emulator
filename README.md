@@ -156,31 +156,21 @@ Alternatively, run the example Jupyter notebook, which does the same and allows 
 
 ### Main paper that shows how this emulator was developed and some results using it.
 
-- [MG Boost Emulator Paper (arXiv:2603.11895)](https://arxiv.org/pdf/2603.11895) 
+- [MG Boost Emulator Paper (arXiv:2603.11895)](https://arxiv.org/pdf/2603.11895)  
   Sankarshana Srinivasan, Shreya Prabhu, Kai Lehman, Ajiv Krishnan Vinaychandran, and Jochen Weller (2026)
+
   *Cosmological gravity on all scales V: MCMC forecasts combining large scale structure and CMB lensing for binned phenomenological modified gravity*
-  Uses emulator to compute matter power spectrum and therefore build the 3x2pt data vector for LSST Y10, and also construct the combination of CMB lensing with the 3x2pt data vector. The emulator allows one to test for deviations across a variety of bins (one at a time) between z=0 and z=3.
+
+  Uses emulator to compute matter power spectrum and therefore build the 3x2pt data vector for LSST Y10, and also construct the combination of CMB lensing with the 3x2pt data vector. The emulator allows one to test for deviations across a variety of bins (one at a time) between z = 0 and z = 3.
 
 ---
 
 ### Supporting work
 
-- Srinivasan, S., Thomas, D. B., & Taylor, P. L. (2025)  
-  *Cosmological gravity on all scales. Part IV. 3×2pt Fisher forecasts for pixelised phenomenological modified gravity*  
-  [arXiv:2409.06569](https://arxiv.org/abs/2409.06569) 
-  This paper used a similar binned MG model, but used the ReACT code for predictions.  
+- Srinivasan, S., Thomas, D. B., & Taylor, P. L. (2025)
 
-- Srinivasan, S., Thomas, D. B., & Battye, R. (2024)  
-  *Cosmological gravity on all scales. Part III. Non-linear matter power spectrum in phenomenological modified gravity*  
-  [arXiv:2306.17240](https://arxiv.org/abs/2306.17240)
-  Validation of ReACT code on N-body simulations for binned MG
+  *Cosmological gravity on all scales. Part IV. 3×2pt Fisher forecasts for pixelised phenomenological modified gravity*
 
-- Srinivasan, S., Thomas, D. B., Pace, F., & Battye, R. (2021)  
-  *Cosmological gravity on all scales. Part II. Model independent modified gravity N-body simulations*  
-  [arXiv:2103.05051](https://arxiv.org/abs/2103.05051)
-  First paper that ran N-body simulations for this type of binned MG
+  [arXiv:2409.06569](https://arxiv.org/abs/2409.06569)
 
-- Thomas, D. B. (2020)  
-  *Cosmological gravity on all scales: Simple equations, required conditions, and a framework for modified gravity*  
-  [arXiv:2004.13051](https://arxiv.org/abs/2004.13051)
-  Theory paper, introduces binned MG parameterisation and assumptions. 
+  This paper used a similar binned MG model, but used the ReACT code for predictions.
