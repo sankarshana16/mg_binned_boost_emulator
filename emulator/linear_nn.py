@@ -10,7 +10,7 @@ class LinearBoostNN:
 
     def __init__(self, model_path, device="cpu"):
 
-        checkpoint = torch.load(model_path, map_location=device)
+        checkpoint = torch.load(model_path, map_location=device, weights_only=False)
 
         self.model = Net(
             hidden_layers=checkpoint["hidden_layers"],
