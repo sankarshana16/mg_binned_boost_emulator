@@ -33,6 +33,10 @@ from emulator import MGEmulator
 
 mus = [0.9, 1.0, 1.1]
 
+zs = [0.0, 0.5, 1.0]
+
+emu = MGEmulator(model_dir="../models")
+
 plt.figure(figsize=(6,4))
 
 for m in mus:
