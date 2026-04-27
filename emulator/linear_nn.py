@@ -53,31 +53,40 @@ class LinearBoostNN:
 
     def predict_boost(self, cosmo, mu, eta, bin_index, zs):
 
-        zs = np.atleast_1d(zs)
+        zs = np.atleast_1d(zs).astype(np.float32)
+        Nz = len(zs)
 
-        boosts = []
+        lnAs = np.log(1e10 * cosmo["A_s"]).astype(np.float32)
+        bin_scaled = np.float32(bin_index / 4.0)
 
-        for z in zs:
+        # Build full batch at once: shape (Nz, 9)
+        X = np.column_stack([
+            np.full(Nz, cosmo["Omega_m"], dtype=np.float32),
+            np.full(Nz, cosmo["Omega_b"], dtype=np.float32),
+            np.full(Nz, cosmo["h"], dtype=np.float32),
+            np.full(Nz, cosmo["n_s"], dtype=np.float32),
+            np.full(Nz, lnAs, dtype=np.float32),
+            np.full(Nz, mu, dtype=np.float32),
+            np.full(Nz, eta, dtype=np.float32),
+            zs,
+            np.full(Nz, bin_scaled, dtype=np.float32),
+        ])
 
-            params = self._map_params(cosmo, mu, eta, bin_index, z)
+        # One tensor conversion only
+        x = torch.from_numpy(X).to(self.device)
 
-            x = torch.tensor(params, dtype=torch.float32).to(self.device)
-            x = self._standardize(x)
-            x = x.unsqueeze(0)
+        # Vectorized normalization
+        x = (x - self.mu_param) / self.sigma_param
 
-            with torch.no_grad():
-                pred_std = self.model(x).cpu().numpy()
+        with torch.no_grad():
+            pred_std = self.model(x).cpu().numpy()
 
-            pred = pred_std * self.y_sigma + self.y_mu
+        pred = pred_std * self.y_sigma + self.y_mu
 
-            shape = pred[:, :-1]
-            log_ref = pred[:, -1:]
-
-            log_boost = shape + log_ref
-            boost = np.exp(log_boost).flatten()
-
-            boosts.append(boost)
-
-        boosts = np.array(boosts)
-
-        return self.k, boosts
+        shape = pred[:, :-1]
+        log_ref = pred[:, -1:]
+    
+        log_boost = shape + log_ref
+        boost = np.exp(log_boost)
+    
+        return self.k, boost
