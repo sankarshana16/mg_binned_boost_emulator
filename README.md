@@ -133,7 +133,7 @@ cola_eg.txt
 Clone the repo:
 
 ```python
-git clone https://github.com/yourusername/mg_boost_emulator.git
+https://github.com/sankarshana16/mg_binned_boost_emulator.git
 cd mg_boost_emulator
 ```
 Install dependencies:
